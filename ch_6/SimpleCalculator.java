@@ -10,7 +10,8 @@ public class SimpleCalculator {
      * @param num2 second number to be added
      */
     public static void add(double num1, double num2){
-// dsfdf
+        double result = num1 + num2;
+        System.out.println(num1 + " + " + num2 + " = " + result);
     }
     
     /***
@@ -20,7 +21,8 @@ public class SimpleCalculator {
      * @param num2 second number to be subtracted
      */
     public static void subtract(double num1, double num2){
-
+        double result = num1 - num2;
+        System.out.println(num1 + " - " + num2 + " = " + result);
     }
 
     /**
@@ -31,8 +33,7 @@ public class SimpleCalculator {
      * @return
      */
     public static double multiply(double num1, double num2){
-
-        
+        return num1 * num2;
     }
 
     /**
@@ -43,9 +44,7 @@ public class SimpleCalculator {
      * @return
      */
     public static double divide(double num1, double num2){
-    
-
-
+        return num1 / num2;
     }
 
 
@@ -55,7 +54,7 @@ public class SimpleCalculator {
         System.out.println("Calculator Choices: \n1. Add \n2. Subtract \n3. Multiply \n4. Divide");
         
         // while calcGo --> makes it run in a loop forever
-        while(calcGo){
+       // while(calcGo){
             System.out.println("Select Choice:");
             int calcChoice = input.nextInt();
 
@@ -66,10 +65,28 @@ public class SimpleCalculator {
                 System.out.println("Enter second number:");
                 double secNum = input.nextDouble();
 
+                if (calcChoice == 1){
+                    add(firstNum, secNum);
+                }
 
-            }
+                else if (calcChoice == 2){
+                    subtract(firstNum, secNum);
+                }
 
-        }
+                else if (calcChoice == 3){
+                    System.out.println(firstNum +  " * " + secNum + " = " + multiply(firstNum, secNum));
+                }
+
+                else if (calcChoice == 4){
+                    System.out.println(firstNum +  " / " + secNum + " = " + divide(firstNum, secNum));
+                }
+
+                
+            }   else {
+                    System.out.println("Sorry, invalid number");
+                }
+
+     //   }
     
     }
 }
